@@ -1,0 +1,57 @@
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.1
+    hooks:
+      - id: pyupgrade
+        args:
+          - --py38-plus
+  - repo: https://github.com/hadialqattan/pycln
+    rev: v2.4.0
+    hooks:
+      - id: pycln
+        args:
+          - "--config=pyproject.toml"
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+  - repo: https://github.com/jvllmr/pyaphid
+    rev: v0.3.1
+    hooks:
+      - id: pyaphid
+  - repo: https://github.com/adamchainz/blacken-docs
+    rev: 1.16.0
+    hooks:
+      - id: blacken-docs
+        additional_dependencies:
+          - black
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.5.0
+    hooks:
+      - id: yesqa
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.3.4"
+    hooks:
+      - id: ruff
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        additional_dependencies: [prettier@latest, prettier-plugin-toml@latest]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-toml
+  - repo: local
+    hooks:
+      - id: mypy
+        name: Static type checking with mypy
+        language: script
+        entry: .venv/bin/mypy
+        types:
+          - "python"
+        exclude: ^tests/.*

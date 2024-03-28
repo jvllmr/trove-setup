@@ -1,0 +1,72 @@
+[project]
+name = "trove-setup"
+version = "1.0.0"
+description = "Simple TUI for setting up trove classifiers"
+authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
+dependencies = [
+  "textual>=0.48.2",
+  "trove-classifiers>=2024.1.31",
+  "typer[all]>=0.9.0",
+  "tomlkit>=0.12.3",
+  "jmespath>=1.0.1",
+  "pytest-asyncio>=0.23.6",
+]
+requires-python = ">=3.9"
+readme = "README.md"
+license = { text = "MIT" }
+classifiers = [
+  'Development Status :: 5 - Production/Stable',
+  'Intended Audience :: Developers',
+  'License :: OSI Approved :: MIT License',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
+  'Typing :: Typed',
+]
+keywords = ["trove", "classifier", "pypi", "package"]
+
+[project.urls]
+Repository = "https://github.com/jvllmr/trove-setup"
+
+[project.scripts]
+trove_setup = "trove_setup.cli:run_typer"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pycln]
+all = true
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+files = ["src/trove_setup"]
+exclude = ["tests"]
+
+[tool.pdm]
+ignore_package_warnings = ["pre-commit"]
+plugins = ["sync-pre-commit-lock"]
+[tool.pdm.scripts]
+dev = "textual run trove_setup.app:TroveSetupApp --dev"
+console = "textual console"
+
+[tool.pdm.dev-dependencies]
+dev = [
+  "mypy>=1.7.1",
+  "ruff>=0.1.8",
+  "pytest>=7.4.3",
+  "pytest-cov>=4.1.0",
+  "isort>=5.13.1",
+  "pycln>=2.4.0",
+  "pyaphid>=0.3.1",
+  "pre-commit>=3.5.0",
+  "nox>=2023.4.22",
+  "textual-dev>=1.4.0",
+  "pytest-textual-snapshot>=0.4.0",
+  "types-jmespath>=1.0.2.20240106",
+]

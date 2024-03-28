@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "python.testing.pytestEnabled": true,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "ruff.enable": true,
+  "mypy-type-checker.preferDaemon": false,
+  "mypy-type-checker.reportingScope": "workspace",
+
+  "python.languageServer": "Pylance",
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "terminal.integrated.shellIntegration.enabled": true,
+  "python.terminal.activateEnvironment": true
+}
