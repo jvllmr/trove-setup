@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "package"
+version = "0.1.0"
+description = "This is a package"
+authors = []
+classifiers = [
+  'Topic :: Software Development :: Libraries :: Application Frameworks',
+  'License :: OSI Approved :: Educational Community License, Version 2.0 (ECL-2.0)',
+  'Topic :: Desktop Environment :: Window Managers :: Enlightenment :: Themes DR17',
+  'Natural Language :: Lithuanian',
+  'Framework :: Jupyter',
+  'Natural Language :: Italian',
+  'Environment :: Console :: svgalib',
+  'Natural Language :: Afrikaans',
+  'Natural Language :: Russian',
+  'Development Status :: 6 - Mature',
+  'Programming Language :: Python :: 3.6',
+  'Topic :: Desktop Environment :: Window Managers :: Blackbox',
+  'Framework :: Django :: 4.0',
+  'Framework :: Django CMS :: 3.7',
+  'Framework :: Jupyter :: JupyterLab :: Extensions :: Mime Renderers',
+  'Topic :: Text Processing :: Markup :: XML',
+  'Programming Language :: PROGRESS',
+  'Topic :: Software Development :: Libraries :: Perl Modules',
+  'Topic :: Desktop Environment :: Window Managers :: CTWM :: Themes',
+  'Topic :: System :: Hardware :: Universal Serial Bus (USB) :: Video (UVC)',
+]

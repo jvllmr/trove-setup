@@ -31,12 +31,12 @@ class TConfigType(Enum):
 def remove_invalid_chars(str_: str) -> str:
     return (
         str_.replace(" ", "_")
-        .replace(":", "")
-        .replace("-", "")
-        .replace("(", "")
-        .replace(")", "")
-        .replace("/", "")
-        .replace(".", "")
+        .replace(":", "_")
+        .replace("-", "_")
+        .replace("(", "_")
+        .replace(")", "_")
+        .replace("/", "_")
+        .replace(".", "_")
         .lower()
     )
 
@@ -55,7 +55,7 @@ def get_classifier_path(classifier: str) -> str:
     path = ""
     rest = classifier
     while ":" in rest:
-        index = classifier.index("::")
+        index = rest.index("::")
         path += rest[: index + 3]
         rest = rest[index + 3 :]
 
@@ -167,7 +167,7 @@ class TroveSetupApp(App[t.List[str]]):
             find_pyproject_path(pyproject_path)
             if pyproject_path.is_dir()
             else pyproject_path
-        )
+        ).absolute()
 
         with self.pyproject_path.open(mode="rb") as f:
             self.pyproject = tomlkit.load(f)
@@ -232,7 +232,7 @@ class TroveSetupApp(App[t.List[str]]):
                     pyproject_classifier,
                     pyproject_classifier,
                     True,
-                    pyproject_classifier,
+                    id=pyproject_classifier,
                 )
             )
         collapsibles = list(compose_classifiers(present_classifiers))
@@ -255,24 +255,33 @@ class TroveSetupApp(App[t.List[str]]):
     ) -> None:
         result_list = self.get_result_list()
         value = event.selection.value
-        if value in event.selection_list.selected:
-            result_list.add_option(Selection(value, value, True, value))
+
+        if event.selection_list is result_list:
+            path = get_classifier_path(value)
+
+            select_list = self.query_one(f"#{selection_list_id(path)}", SelectionList)
+
+            option = select_list.get_option(select_option_id(value))
+
+            select_list.deselect(option)
+
+            if value in result_list._option_ids.keys():
+                result_list.remove_option(value)
         else:
-            result_list.remove_option(value)
-            if event.selection_list is result_list:
-                path = get_classifier_path(value)
-                select_list = self.query_one(
-                    f"#{selection_list_id(path)}", SelectionList
-                )
-                option = select_list.get_option(select_option_id(value))
-                select_list.toggle(option)
+            if value not in result_list._option_ids.keys():
+                result_list.add_option(Selection(value, value, True, id=value))
+            else:
+                result_list.remove_option(value)
+
+    @property
+    def current_classifiers(self) -> list[str]:
+        result_list = self.get_result_list()
+        return sorted(result_list.selected, key=classifier_sort_key)
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "save_button":
-            result_list = self.get_result_list()
             array_items_str = (
-                f"'{classifier}'"
-                for classifier in sorted(result_list.selected, key=classifier_sort_key)
+                f'"{classifier}"' for classifier in self.current_classifiers
             )
 
             self.write_classifiers(
@@ -283,5 +292,5 @@ class TroveSetupApp(App[t.List[str]]):
                 tomlkit.dump(self.pyproject, f)
             self.exit(
                 result=self.read_classifiers(),
-                message="New classifiers written to pyproject.toml",
+                message=f"New classifiers written to {str(self.pyproject_path)}",
             )

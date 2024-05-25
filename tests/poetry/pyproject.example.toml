@@ -1,6 +1,0 @@
-[tool.poetry]
-name = "package"
-version = "0.1.0"
-description = "This is a package"
-authors = []
-classifiers = []

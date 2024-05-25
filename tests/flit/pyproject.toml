@@ -1,0 +1,23 @@
+[tool.flit.metadata]
+classifiers = [
+  'Environment :: WebAssembly :: WASI',
+  'Framework :: Opps',
+  'Topic :: Software Development :: Libraries :: Tcl Extensions',
+  'Intended Audience :: Information Technology',
+  'Topic :: Multimedia :: Graphics :: Presentation',
+  'Topic :: Scientific/Engineering :: Medical Science Apps.',
+  'Topic :: Desktop Environment :: Window Managers :: XFCE :: Themes',
+  'Natural Language :: Javanese',
+  'Topic :: Games/Entertainment :: Puzzle Games',
+  'Framework :: Django :: 3',
+  'Topic :: Communications :: BBS',
+  'Topic :: File Formats :: JSON :: JSON Schema',
+  'Topic :: Artistic Software',
+  'Topic :: System :: Hardware :: Universal Serial Bus (USB) :: Miscellaneous',
+  'Topic :: Software Development :: Object Brokering :: CORBA',
+  'Operating System :: POSIX :: IRIX',
+  'Natural Language :: Arabic',
+  'Environment :: X11 Applications',
+  'Topic :: Multimedia :: Video :: Display',
+  'Intended Audience :: Telecommunications Industry',
+]

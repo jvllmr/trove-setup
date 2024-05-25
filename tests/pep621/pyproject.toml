@@ -1,0 +1,23 @@
+[project]
+classifiers = [
+  'Topic :: Multimedia :: Video :: Capture',
+  'Topic :: Software Development :: Version Control :: Bazaar',
+  'Topic :: Internet :: WWW/HTTP :: WSGI :: Server',
+  'Environment :: Web Environment :: ToscaWidgets',
+  'Programming Language :: Basic',
+  'Programming Language :: Python :: 3.3',
+  'Programming Language :: Python :: Implementation :: MicroPython',
+  'License :: OSI Approved :: MITRE Collaborative Virtual Workspace License (CVW)',
+  'Topic :: System :: Networking :: Monitoring',
+  'Topic :: Internet :: WWW/HTTP :: WSGI',
+  'Topic :: System :: Power (UPS)',
+  'Framework :: Jupyter :: JupyterLab :: 1',
+  'Environment :: X11 Applications :: Gnome',
+  'Natural Language :: Polish',
+  'Natural Language :: Norwegian',
+  'Topic :: Desktop Environment :: Window Managers :: FVWM',
+  'Topic :: System :: Monitoring',
+  'Topic :: System :: Hardware :: Universal Serial Bus (USB) :: Smart Card',
+  'Programming Language :: Python :: 3.6',
+  'Topic :: Scientific/Engineering :: Visualization',
+]

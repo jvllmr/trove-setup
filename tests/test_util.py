@@ -12,6 +12,7 @@ from trove_setup.app import get_classifier_path
             "Topic :: System :: Systems Administration :: Authentication/Directory :: NIS",
             "Topic :: System :: Systems Administration :: Authentication/Directory",
         ),
+        ("Environment :: Console :: Curses", "Environment :: Console"),
     ],
 )
 def test_get_classifier_path(classifier: str, path: str) -> None:
