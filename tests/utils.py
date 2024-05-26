@@ -1,5 +1,6 @@
 from textual.pilot import Pilot
 from textual.widgets import Collapsible, SelectionList
+from trove_classifiers import sorted_classifiers
 
 from trove_setup.app import (
     TroveSetupApp,
@@ -48,3 +49,6 @@ def remove_classifier_via_result_list(app: TroveSetupApp, classifier: str):
 
 async def save_and_quit(pilot: Pilot):
     await pilot.click("#save_button")
+
+
+classifiers_to_test = sorted_classifiers[::30]

@@ -14,9 +14,9 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: true
       matrix:
         python-version: ["3.9", "3.10", "3.11", "3.12"]
-        fail-fast: true
     steps:
       - uses: actions/checkout@v4
       - name: Setup PDM

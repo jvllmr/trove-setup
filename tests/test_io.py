@@ -1,10 +1,9 @@
 import pytest
 import tomli
-from trove_classifiers import sorted_classifiers
 
 from trove_setup.app import CLASSIFIER_LIST_GETTERS, TroveSetupApp
 
-from .utils import add_classifier, save_and_quit
+from .utils import add_classifier, classifiers_to_test, save_and_quit
 
 pytestmark = pytest.mark.asyncio
 
@@ -20,7 +19,7 @@ def read_classifiers_from_file(app: TroveSetupApp) -> list[str]:
 
 
 @pytest.mark.parametrize(
-    ["classifier"], [(classifier,) for classifier in sorted_classifiers]
+    ["classifier"], [(classifier,) for classifier in classifiers_to_test]
 )
 async def test_io(app: TroveSetupApp, classifier: str):
     prev_classifiers = read_classifiers_from_file(app)

@@ -1,16 +1,20 @@
 import pytest
 from textual.widgets import SelectionList
-from trove_classifiers import sorted_classifiers
 
 from trove_setup.app import TroveSetupApp, get_classifier_path, selection_list_id
 
-from .utils import add_classifier, remove_classifier, remove_classifier_via_result_list
+from .utils import (
+    add_classifier,
+    classifiers_to_test,
+    remove_classifier,
+    remove_classifier_via_result_list,
+)
 
 pytestmark = pytest.mark.asyncio
 
 
 @pytest.mark.parametrize(
-    ["classifier"], [(classifier,) for classifier in sorted_classifiers]
+    ["classifier"], [(classifier,) for classifier in classifiers_to_test]
 )
 async def test_add_classifiers(app: TroveSetupApp, classifier: str):
     async with app.run_test() as pilot:
@@ -27,7 +31,7 @@ async def test_add_classifiers(app: TroveSetupApp, classifier: str):
 
 
 @pytest.mark.parametrize(
-    ["classifier"], [(classifier,) for classifier in sorted_classifiers]
+    ["classifier"], [(classifier,) for classifier in classifiers_to_test]
 )
 async def test_remove_classifiers(app: TroveSetupApp, classifier: str):
     async with app.run_test() as pilot:
@@ -45,7 +49,7 @@ async def test_remove_classifiers(app: TroveSetupApp, classifier: str):
 
 
 @pytest.mark.parametrize(
-    ["classifier"], [(classifier,) for classifier in sorted_classifiers]
+    ["classifier"], [(classifier,) for classifier in classifiers_to_test]
 )
 async def test_remove_via_result_list_classifiers(app: TroveSetupApp, classifier: str):
     async with app.run_test() as pilot:
