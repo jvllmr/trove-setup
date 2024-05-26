@@ -7,6 +7,8 @@
 A simple TUI for adding trove classifiers to your project.
 Supports `pep621`, `poetry` and `flit` pyproject.toml files.
 
+![trove-setup demo](demo/demo.gif)
+
 ## Installation and usage
 
 Optimal installation with `pipx`:
