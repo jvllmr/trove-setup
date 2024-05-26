@@ -1,0 +1,33 @@
+name: Routine Checks
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  Test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PDM
+        uses: pdm-project/setup-pdm@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: true
+      - name: Install dependencies
+        run: pdm install --frozen-lock
+      - name: Run tests
+        run: pdm test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: coverage
+          files: ./coverage/coverage.xml

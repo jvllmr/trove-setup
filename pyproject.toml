@@ -19,6 +19,7 @@ classifiers = [
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Natural Language :: English",
+  "Operating System :: OS Independent",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
@@ -54,7 +55,6 @@ plugins = ["sync-pre-commit-lock"]
 dev = "textual run trove_setup.app:TroveSetupApp --dev"
 console = "textual console"
 test = "pytest -n auto"
-test_cov = "pytest -n auto --cov --cov-report=xml:coverage.xml"
 
 [tool.pdm.dev-dependencies]
 dev = [

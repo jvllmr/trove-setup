@@ -1,0 +1,25 @@
+name: Upload Python Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    name: Upload to PyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/trove-setup
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PDM
+        uses: pdm-project/setup-pdm@v4
+        with:
+          python-version: "3.10"
+      - name: Build
+        run: pdm build
+      - name: Publish
+        run: pdm publish
