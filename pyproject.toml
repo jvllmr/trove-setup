@@ -76,3 +76,5 @@ dev = [
 
 [tool.isort]
 profile = "black"
+
+[tool.nox]
