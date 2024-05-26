@@ -46,12 +46,12 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-toml
-  - repo: local
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
     hooks:
       - id: mypy
-        name: Static type checking with mypy
-        language: script
-        entry: .venv/bin/mypy
-        types:
-          - "python"
         exclude: ^tests/.*
+        additional_dependencies:
+          - "types-jmespath"
+          - "textual"
+          - "trove-classifiers"
