@@ -6,23 +6,24 @@ authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
 dependencies = [
   "textual>=0.59.0",
   "trove-classifiers>=2024.1.31",
-  "typer[all]>=0.9.0",
+  "typer>=0.12.0",
   "tomlkit>=0.12.3",
   "jmespath>=1.0.1",
-  "pytest-asyncio>=0.23.6",
+  "rich>=13.7.1",
+  "packaging>=24.0",
 ]
 requires-python = ">=3.9"
 readme = "README.md"
 license = { text = "MIT" }
 classifiers = [
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Topic :: Software Development :: Code Generators",
-  "Topic :: Terminals :: Terminal Emulators/X Terminals",
   "Typing :: Typed",
 ]
 keywords = ["trove", "classifier", "pypi", "package"]
@@ -71,6 +72,7 @@ dev = [
   "types-jmespath>=1.0.2.20240106",
   "tomli>=2.0.1",
   "pytest-xdist>=3.5.0",
+  "pytest-asyncio>=0.23.6",
 ]
 
 [tool.isort]

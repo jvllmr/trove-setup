@@ -17,6 +17,7 @@ from tomlkit import TOMLDocument, items
 from trove_classifiers import classifiers as official_classifiers
 from trove_classifiers import sorted_classifiers
 
+from .guide import run_guided
 from .trove_tree import STUB_MARKER, TTreeNode, get_classifiers_tree
 
 
@@ -185,6 +186,10 @@ class TroveSetupApp(App[t.List[str]]):
         else:
             self.project_type = type_
 
+        present_classifiers = self.read_classifiers()
+        if not present_classifiers:
+            self.write_classifiers(run_guided())
+
         super().__init__(driver_class, css_path, watch_css)
 
     def _load_table(
@@ -224,6 +229,7 @@ class TroveSetupApp(App[t.List[str]]):
     def compose(self) -> ComposeResult:
         selected: list[Selection[str]] = []
         present_classifiers = self.read_classifiers()
+
         for pyproject_classifier in present_classifiers:
             if pyproject_classifier not in official_classifiers:
                 continue
