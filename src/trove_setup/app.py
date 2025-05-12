@@ -271,10 +271,10 @@ class TroveSetupApp(App[t.List[str]]):
 
             select_list.deselect(option)
 
-            if value in result_list._option_ids.keys():
+            if value in result_list._id_to_option.keys():
                 result_list.remove_option(value)
         else:
-            if value not in result_list._option_ids.keys():
+            if value not in result_list._id_to_option.keys():
                 result_list.add_option(Selection(value, value, True, id=value))
             else:
                 result_list.remove_option(value)

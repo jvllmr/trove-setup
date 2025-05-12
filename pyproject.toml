@@ -1,6 +1,6 @@
 [project]
 name = "trove-setup"
-version = "1.0.0"
+
 description = "Simple TUI for setting up trove classifiers"
 authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
 dependencies = [
@@ -16,18 +16,18 @@ requires-python = ">=3.9"
 readme = "README.md"
 license = { text = "MIT" }
 classifiers = [
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
-  "Natural Language :: English",
-  "Operating System :: OS Independent",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Typing :: Typed",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
 ]
 keywords = ["trove", "classifier", "pypi", "package"]
+dynamic = ["version"]
 
 [project.urls]
 Repository = "https://github.com/jvllmr/trove-setup"
@@ -49,8 +49,12 @@ files = ["src/trove_setup"]
 exclude = ["tests"]
 
 [tool.pdm]
-ignore_package_warnings = ["pre-commit"]
 plugins = ["sync-pre-commit-lock"]
+
+[tool.pdm.version]
+source = "scm"
+
+
 [tool.pdm.scripts]
 dev = "textual run trove_setup.app:TroveSetupApp --dev"
 console = "textual console"
@@ -77,4 +81,5 @@ dev = [
 [tool.isort]
 profile = "black"
 
-[tool.nox]
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
