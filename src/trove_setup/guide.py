@@ -69,9 +69,9 @@ def run_guided() -> list[str]:
     )
     parsed_min_python_version = Version(min_python_version)
     parsed_max_python_version = Version(max_python_version)
-    assert (
-        parsed_min_python_version <= parsed_max_python_version
-    ), "You min python version cannot be higher than your max python version"
+    assert parsed_min_python_version <= parsed_max_python_version, (
+        "You min python version cannot be higher than your max python version"
+    )
     for version, classifier in python_versions.items():
         if (
             version >= parsed_min_python_version

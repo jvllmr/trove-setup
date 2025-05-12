@@ -1,8 +1,9 @@
+from pathlib import Path
+
 import pytest
 from textual.pilot import Pilot
-from pathlib import Path
+
 from .utils import add_classifier
-import os
 
 FILE_DIR = Path(__file__).parent
 RUN_APP_PATHS = [
