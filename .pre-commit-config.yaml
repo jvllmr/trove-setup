@@ -42,7 +42,11 @@ repos:
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
+        exclude_types:
+          - svg
       - id: trailing-whitespace
+        exclude_types:
+          - svg
       - id: check-toml
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.15.0
