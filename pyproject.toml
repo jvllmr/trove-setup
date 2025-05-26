@@ -61,7 +61,7 @@ test = "pytest -x -n auto"
 [tool.pdm.dev-dependencies]
 dev = [
   "mypy>=1.15.0",
-  "ruff>=0.11.10",
+  "ruff>=0.11.11",
   "pytest>=8.3.5",
   "isort>=6.0.1",
   "pycln>=2.5.0",
