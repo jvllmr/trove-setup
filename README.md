@@ -1,6 +1,6 @@
 [![PyPI - Downloads](https://img.shields.io/pypi/dd/trove-setup)](https://pypi.org/p/trove-setup)
 [![GitHub license](https://img.shields.io/github/license/jvllmr/trove-setup)](https://github.com/jvllmr/trove-setup/blob/dev/LICENSE)
-[![Routine Checks](https://github.com/jvllmr/sqlalchemy-sessionload/actions/workflows/test.yaml/badge.svg)](https://github.com/jvllmr/trove-setup/actions/workflows/test.yaml)
+[![Routine Checks](https://github.com/jvllmr/trove-setup/actions/workflows/test.yaml/badge.svg)](https://github.com/jvllmr/trove-setup/actions/workflows/test.yaml)
 
 # trove-setup
 
