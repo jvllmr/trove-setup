@@ -57,6 +57,7 @@ source = "scm"
 dev = "textual run trove_setup.app:TroveSetupApp --dev"
 console = "textual console"
 test = "pytest -x -n auto"
+update-snapshots = "pytest -x -n auto --snapshot-update"
 
 [tool.pdm.dev-dependencies]
 dev = [
