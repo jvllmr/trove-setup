@@ -4,7 +4,7 @@ name = "trove-setup"
 description = "Simple TUI for setting up trove classifiers"
 authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
 dependencies = [
-  "textual>=3.7.1",
+  "textual>=6.1.0",
   "trove-classifiers>=2025.9.11.17",
   "typer>=0.17.4",
   "tomlkit>=0.13.3",
