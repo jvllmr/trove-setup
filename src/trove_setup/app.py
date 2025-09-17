@@ -13,7 +13,7 @@ from textual.containers import Horizontal, VerticalScroll
 from textual.driver import Driver
 from textual.widgets import Button, Collapsible, SelectionList
 from textual.widgets.selection_list import Selection
-from tomlkit import TOMLDocument, items
+from tomlkit import TOMLDocument, container, items
 from trove_classifiers import classifiers as official_classifiers
 from trove_classifiers import sorted_classifiers
 
@@ -181,6 +181,8 @@ class TroveSetupApp(App[t.List[str]]):
                     break
                 except KeyError:
                     pass
+                except TypeError as exc:
+                    print(exc.args[0])
             else:
                 raise KeyError("Could not locate classifiers in pyproject.toml")
         else:
@@ -194,11 +196,12 @@ class TroveSetupApp(App[t.List[str]]):
 
     def _load_table(
         self, doc: TOMLDocument, path: jmespath.parser.ParsedResult
-    ) -> items.Table:
+    ) -> items.Table | container.OutOfOrderTableProxy:
         table = path.search(doc)
         if table is None:
             raise KeyError(path.expression)
-        assert isinstance(table, (items.Table)), type(table)
+        if not isinstance(table, (items.Table, container.OutOfOrderTableProxy)):
+            raise TypeError(f"Expected table at {path.expression}, not {type(table)}")
         return table
 
     @property
@@ -210,7 +213,7 @@ class TroveSetupApp(App[t.List[str]]):
         return CLASSIFIER_LIST_GETTERS[self.project_type][0]
 
     @property
-    def pyproject_target_table(self) -> items.Table:
+    def pyproject_target_table(self) -> items.Table | container.OutOfOrderTableProxy:
         return self._load_table(self.pyproject, self.target_table_path)
 
     def write_classifiers(self, classifiers: list[str]) -> None:
