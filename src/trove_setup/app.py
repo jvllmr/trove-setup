@@ -171,7 +171,6 @@ class TroveSetupApp(App[t.List[str]]):
         ).absolute()
 
         with self.pyproject_path.open(mode="rb") as f:
-
             self.pyproject = tomlkit.load(f)
 
         if type_ == TConfigType.auto:
