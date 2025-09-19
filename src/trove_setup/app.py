@@ -297,8 +297,9 @@ class TroveSetupApp(App[t.List[str]]):
                 tomlkit.array("[" + ",".join(array_items_str) + "]").multiline(True)
             )
 
-            with open(self.pyproject_path, "w") as f:
-                tomlkit.dump(self.pyproject, f)
+            out = tomlkit.dumps(self.pyproject)
+            self.pyproject_path.write_bytes(out.encode("utf-8"))
+
             self.exit(
                 result=self.read_classifiers(),
                 message=f"New classifiers written to {str(self.pyproject_path)}",
