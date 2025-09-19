@@ -297,10 +297,6 @@ class TroveSetupApp(App[t.List[str]]):
                 tomlkit.array("[" + ",".join(array_items_str) + "]").multiline(True)
             )
 
-            # Above reads bytes but writes string, turning \r\n into double lines
-            # with open(self.pyproject_path, "w") as f:
-            #     tomlkit.dump(self.pyproject, f)
-            #
             out = tomlkit.dumps(self.pyproject)
             self.pyproject_path.write_bytes(out.encode("utf-8"))
 
