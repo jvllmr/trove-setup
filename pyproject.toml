@@ -6,7 +6,7 @@ authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
 dependencies = [
   "textual>=6.1.0",
   "trove-classifiers>=2025.9.11.17",
-  "typer>=0.17.4",
+  "typer>=0.19.1",
   "tomlkit>=0.13.3",
   "jmespath>=1.0.1",
   "rich>=14.1.0",
@@ -62,8 +62,8 @@ update-snapshots = "pytest -x -n auto --snapshot-update"
 
 [tool.pdm.dev-dependencies]
 dev = [
-  "mypy>=1.18.1",
-  "ruff>=0.13.0",
+  "mypy>=1.18.2",
+  "ruff>=0.13.1",
   "pytest>=8.4.2",
   "isort>=6.0.1",
   "pycln>=2.5.0",
