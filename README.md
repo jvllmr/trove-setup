@@ -20,13 +20,13 @@ pipx install trove-setup
 Run in your project via
 
 ```shell
-trove_setup
+trove-setup
 ```
 
 ## CLI Params
 
 ```
-trove_setup
+trove-setup
     --pyproject-path: Path to pyproject.toml file. Can be directory or file.
     --type: Type of project. Can be one of pep621, poetry, flit, auto.
 ```
