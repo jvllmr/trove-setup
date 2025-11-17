@@ -5,7 +5,7 @@ description = "Simple TUI for setting up trove classifiers"
 authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
 dependencies = [
   "textual>=6.6.0",
-  "trove-classifiers>=2025.9.11.17",
+  "trove-classifiers>=2025.11.14.15",
   "typer>=0.20.0",
   "tomlkit>=0.13.3",
   "jmespath>=1.0.1",
@@ -65,13 +65,13 @@ update-snapshots = "pytest -x -n auto --snapshot-update"
 [tool.pdm.dev-dependencies]
 dev = [
   "mypy>=1.18.2",
-  "ruff>=0.14.4",
+  "ruff>=0.14.5",
   "pytest>=8.4.2",
   "isort>=7.0.0",
   "pycln>=2.6.0",
   "pyaphid>=0.3.1",
   "pre-commit>=4.4.0",
-  "nox>=2025.10.16",
+  "nox>=2025.11.12",
   "textual-dev>=1.8.0",
   "pytest-textual-snapshot>=1.1.0",
   "types-jmespath>=1.0.2.20250809",
