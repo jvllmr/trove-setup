@@ -65,12 +65,12 @@ update-snapshots = "pytest -x -n auto --snapshot-update"
 [tool.pdm.dev-dependencies]
 dev = [
   "mypy>=1.18.2",
-  "ruff>=0.14.5",
+  "ruff>=0.14.6",
   "pytest>=8.4.2",
   "isort>=7.0.0",
   "pycln>=2.6.0",
   "pyaphid>=0.3.1",
-  "pre-commit>=4.4.0",
+  "pre-commit>=4.5.0",
   "nox>=2025.11.12",
   "textual-dev>=1.8.0",
   "pytest-textual-snapshot>=1.1.0",
