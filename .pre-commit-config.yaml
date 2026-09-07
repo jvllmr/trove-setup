@@ -2,19 +2,19 @@ exclude: .+\.ambr
 
 repos:
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.21.0
+    rev: v3.21.2
     hooks:
       - id: pyupgrade
         args:
           - --py39-plus
   - repo: https://github.com/hadialqattan/pycln
-    rev: v2.5.0
+    rev: v2.6.0
     hooks:
       - id: pycln
         args:
           - "--config=pyproject.toml"
   - repo: https://github.com/PyCQA/isort
-    rev: 7.0.0
+    rev: 9.0.1
     hooks:
       - id: isort
   - repo: https://github.com/jvllmr/pyaphid
@@ -28,12 +28,12 @@ repos:
         additional_dependencies:
           - black
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.14.0"
+    rev: "v0.16.6"
     hooks:
       - id: ruff
       - id: ruff-format
   - repo: https://github.com/jvllmr/pre-commit-prettier
-    rev: v3.6.2
+    rev: v3.9.6
     hooks:
       - id: prettier
         additional_dependencies: [prettier@latest, prettier-plugin-toml@latest]
@@ -49,7 +49,7 @@ repos:
           - svg
       - id: check-toml
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.18.2
+    rev: v2.3.1
     hooks:
       - id: mypy
         exclude: ^tests/.*
