@@ -35,13 +35,7 @@ repos:
         exclude_types:
           - svg
       - id: check-toml
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.18.2
+  - repo: https://github.com/astral-sh/ty-pre-commit
+    rev: 18b2b8bb1b9b90d2d21283756e89b07fc9c747bf # v0.0.95
     hooks:
-      - id: mypy
-        exclude: ^tests/.*
-        additional_dependencies:
-          - "types-jmespath"
-          - "textual"
-          - "trove-classifiers"
-          - "nox"
+      - id: ty

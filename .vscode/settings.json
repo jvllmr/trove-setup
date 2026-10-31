@@ -7,9 +7,6 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "ruff.enable": true,
-  "mypy-type-checker.preferDaemon": false,
-  "mypy-type-checker.reportingScope": "workspace",
-
   "python.languageServer": "Pylance",
   "python.defaultInterpreterPath": ".venv/bin/python",
   "terminal.integrated.shellIntegration.enabled": true,
