@@ -1,5 +1,6 @@
+import tomllib
+
 import pytest
-import tomli
 
 from trove_setup.app import CLASSIFIER_LIST_GETTERS, TroveSetupApp
 
@@ -11,7 +12,7 @@ pytestmark = pytest.mark.asyncio
 def read_classifiers_from_file(app: TroveSetupApp) -> list[str]:
     path, attr = CLASSIFIER_LIST_GETTERS[app.project_type]
     with app.pyproject_path.open("rb") as f:
-        content = tomli.load(f)
+        content = tomllib.load(f)
     target_table = path.search(content)
     classifiers = target_table[attr]
     assert isinstance(classifiers, list)

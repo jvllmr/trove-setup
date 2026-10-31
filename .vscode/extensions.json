@@ -6,6 +6,6 @@
     "streetsidesoftware.code-spell-checker",
     "ms-python.vscode-pylance",
     "ms-python.python",
-    "tamasfe.even-better-toml"
+    "tombi-toml.tombi"
   ]
 }
