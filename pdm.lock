@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.1"
-content_hash = "sha256:8453444bc8aefebc02c35e007d1741f0f7bc026307467a438f58b80e3b5bad11"
+content_hash = "sha256:cbb34ab97e35d21ccd1a4e66a54c7dcc57d06dcbf21a1d41379879036ca61a14"
 
 [[metadata.targets]]
 requires_python = ">=3.11"
@@ -264,7 +264,7 @@ version = "0.4.6"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 summary = "Cross-platform colored terminal text."
 groups = ["default", "dev"]
-marker = "sys_platform == \"win32\" or platform_system == \"Windows\""
+marker = "platform_system == \"Windows\" or sys_platform == \"win32\""
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
@@ -322,13 +322,13 @@ files = [
 
 [[package]]
 name = "filelock"
-version = "4.2.5"
+version = "4.2.6"
 requires_python = ">=3.11"
 summary = "A platform independent file lock."
 groups = ["dev"]
 files = [
-    {file = "filelock-4.2.5-py3-none-any.whl", hash = "sha256:46ce42d27e5cdde09ee7197349663e97cb106679bd9e75db3a09679fbc7aa1a8"},
-    {file = "filelock-4.2.5.tar.gz", hash = "sha256:37d8fa4f8b5e9233612e68ab23bf64cae41771322c8797361088ae2895b12894"},
+    {file = "filelock-4.2.6-py3-none-any.whl", hash = "sha256:fd7d4fca497bf3e3d0945a13261f8e684f2aef12ce7cf76aef26e13bf7388b88"},
+    {file = "filelock-4.2.6.tar.gz", hash = "sha256:ee7af8ede36dcaf12e1016d9f7c3a63ecd5497d46f85dab21b8c779b8f944e97"},
 ]
 
 [[package]]
@@ -1428,6 +1428,17 @@ dependencies = [
 files = [
     {file = "typer-0.27.3-py3-none-any.whl", hash = "sha256:e50022f28b82a86313e54501317a1db64bf8f8d036ff8cfe5ca7e47675454aff"},
     {file = "typer-0.27.3.tar.gz", hash = "sha256:d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"},
+]
+
+[[package]]
+name = "types-jmespath"
+version = "1.1.0.20260724"
+requires_python = ">=3.10"
+summary = "Typing stubs for jmespath"
+groups = ["dev"]
+files = [
+    {file = "types_jmespath-1.1.0.20260724-py3-none-any.whl", hash = "sha256:ad965080d2ef25f4dc95da30819be559597c4301efc0311a9571b2ce8fc62c32"},
+    {file = "types_jmespath-1.1.0.20260724.tar.gz", hash = "sha256:cd429dab3bb2f339a5a546f444f2f96c30cb1f31395590fb1d609ed13624d919"},
 ]
 
 [[package]]
