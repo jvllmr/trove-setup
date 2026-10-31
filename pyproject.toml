@@ -41,11 +41,17 @@ trove-setup = "trove_setup.cli:run_typer"
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
-[tool.mypy]
-python_version = "3.11"
-strict = true
-files = ["src/trove_setup"]
-exclude = ["tests"]
+[tool.ty.environment]
+python-version = "3.11"
+
+[tool.ty.src]
+include = ["src/trove_setup"]
+
+[tool.ty.rules]
+dynamic-function-decorator-return = "error"
+missing-type-argument = "error"
+possibly-unresolved-reference = "warn"
+unsound-return-statement = "error"
 
 [tool.pdm]
 plugins = ["sync-pre-commit-lock"]
@@ -67,7 +73,6 @@ asyncio_default_fixture_loop_scope = "function"
 
 [dependency-groups]
 dev = [
-  "mypy>=2.4.1",
   "ruff>=0.17.3",
   "pytest>=8.4.2",
   "nox>=2026.10.20",
@@ -77,4 +82,5 @@ dev = [
   "pytest-xdist>=3.8.0",
   "pytest-asyncio>=1.4.1",
   "prek>=0.5.9",
+  "ty>=0.0.95",
 ]

@@ -26,6 +26,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# uv.lock left behind by the ty pre-commit hook (uv check)
+/uv.lock
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -139,11 +142,6 @@ venv.bak/
 
 # mkdocs documentation
 /site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
 
 # Pyre type checker
 .pyre/

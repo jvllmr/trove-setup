@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "ms-python.mypy-type-checker",
+    "astral-sh.ty",
     "ms-python.black-formatter",
     "charliermarsh.ruff",
     "streetsidesoftware.code-spell-checker",
