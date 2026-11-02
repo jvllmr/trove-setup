@@ -80,7 +80,7 @@ dev = [
   "pytest-textual-snapshot>=1.1.0",
   "types-jmespath>=1.1.0.20260724",
   "pytest-xdist>=3.8.0",
-  "pytest-asyncio>=1.4.1",
+  "pytest-asyncio>=1.4.1.post1",
   "prek>=0.5.9",
   "ty>=0.0.95",
 ]
