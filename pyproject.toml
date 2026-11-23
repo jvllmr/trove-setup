@@ -6,7 +6,7 @@ authors = [{ name = "Jan Vollmer", email = "jan@vllmr.dev" }]
 dependencies = [
   "textual>=8.2.8",
   "trove-classifiers>=2026.9.21.13",
-  "typer>=0.28.0",
+  "typer>=0.29.2",
   "tomlkit>=0.15.2",
   "jmespath>=1.1.0",
   "rich>=15.0.0",
@@ -73,14 +73,14 @@ asyncio_default_fixture_loop_scope = "function"
 
 [dependency-groups]
 dev = [
-  "ruff>=0.17.4",
+  "ruff>=0.17.6",
   "pytest>=8.4.2",
   "nox>=2026.10.20",
   "textual-dev>=1.8.0",
   "pytest-textual-snapshot>=1.1.0",
   "types-jmespath>=1.1.0.20260724",
   "pytest-xdist>=3.8.0",
-  "pytest-asyncio>=1.4.1.post1",
-  "prek>=0.5.10",
-  "ty>=0.0.99",
+  "pytest-asyncio>=1.5.0",
+  "prek>=0.5.11",
+  "ty>=0.0.108",
 ]
